@@ -1,5 +1,6 @@
 let textInput = document.querySelector("input#validation-input");
-let textLength = textInput.dataset.length;
+let textLength = Number(textInput.dataset.length);
+console.log(textLength);
 let input = document.querySelector("input");
 console.log(textLength);
 textInput.addEventListener("focus", () => {
