@@ -3,7 +3,7 @@ console.log(input);
 let text = document.querySelector("span#text");
 console.log(text);
 
-input.addEventListener("change", (event) => {
+input.addEventListener("input", (event) => {
   let inputChanges = event.currentTarget.value;
   //   console.log(inputChanges);
 

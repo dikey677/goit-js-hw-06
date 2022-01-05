@@ -13,16 +13,50 @@ const images = [
   },
 ];
 
+// Решение через map
 const ul = document.querySelector("ul.gallery");
 
-//========================================
-images.forEach((image) => {
-  ul.insertAdjacentHTML(
-    "afterbegin",
-    `<li><img src="${image.url}" alt="${image.alt} width="250" height="200"></img></li>`
-  );
-  console.log(ul);
+const source = images.map((image) => {
+  const string = `<li><img src = ${image.url} alt = '${image.alt}' width="450" heigth="250"></li>`;
 
-  ul.style.display = "flex";
-  ul.style.flexDirection = "row";
+  return string;
 });
+
+const addImage = source.join("");
+console.log(addImage);
+
+ul.insertAdjacentHTML("afterbegin", addImage);
+ul.style.display = "flex";
+ul.style.flexDirection = "row";
+console.log(ul);
+
+//========================================================
+
+// Другое оформление через map
+// const addImage = images.map((image) => {
+//   ul.insertAdjacentHTML(
+//     "afterbegin",
+//     `<li><img src=${image.url} alt='${image.alt}' width="450" heigth="250"></li>`
+//   );
+//   return ul;
+// });
+
+// console.log(addImage);
+
+// ul.style.display = "flex";
+// ul.style.flexDirection = "row-reverse";
+// console.log(ul);
+
+//========================================================
+
+//forEach
+// images.forEach((image) => {
+//   ul.insertAdjacentHTML(
+//     "afterbegin",
+//     `<li><img src="${image.url}" alt="${image.alt}" width="350" height="250"></img></li>`
+//   );
+//   console.log(ul);
+
+//   ul.style.display = "flex";
+//   ul.style.flexDirection = "row";
+// });
